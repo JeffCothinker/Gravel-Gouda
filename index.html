@@ -19,9 +19,9 @@
             border: 5px dashed #ffcc70;
             border-radius: 20px;
             margin-top: 40px;
+            text-align: center;
         }
         h1 {
-            text-align: center;
             color: #b25900;
         }
         .scene {
@@ -42,6 +42,11 @@
         }
         .choices button:hover {
             background-color: #fff2b2;
+        }
+        .birthday {
+            margin-top: 40px;
+            font-size: 2em;
+            color: #c2185b;
         }
     </style>
 </head>
@@ -74,6 +79,7 @@
                     break;
             }
             result += "<br><br>You collected " + cheeseCount + " cheeses on this leg of the adventure!";
+            result += "<div class='birthday'>🎉 Happy Birthday, Erica! 🎉</div>";
             document.getElementById("scene").innerHTML = result;
             document.getElementById("choices").innerHTML = '<button onclick="location.reload()">Play Again</button>';
         }
