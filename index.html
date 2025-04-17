@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravel & Gouda: A Fuzzy Epic</title>
+    <style>
+        body {
+            background-color: #fcecc9;
+            font-family: 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff6e5;
+            border: 5px dashed #ffcc70;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #b25900;
+        }
+        .scene {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .choices {
+            margin-top: 30px;
+        }
+        .choices button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ffd966;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .choices button:hover {
+            background-color: #fff2b2;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Gravel & Gouda: A Fuzzy Epic</h1>
+        <div id="scene" class="scene">
+            Erica wakes up and gasps — the cheese plate is gone, and Mike, Jeff, and Diego are missing!
+        </div>
+        <div class="choices" id="choices">
+            <button onclick="selectPath('gravel')">Bike the Crumbly Gravel Road</button>
+            <button onclick="selectPath('lake')">Swim the Lake of Lost Cheddar</button>
+            <button onclick="selectPath('forest')">Run through the Breadstick Forest</button>
+        </div>
+    </div>
+
+    <script>
+        function selectPath(path) {
+            let result = "";
+            let cheeseCount = Math.floor(Math.random() * 5 + 1);
+            switch(path) {
+                case 'gravel':
+                    result = "Erica pedals furiously past bouncing felt boulders. She finds Mike tangled in a finish line banner yelling 'Frozen pickles!!!'";
+                    break;
+                case 'lake':
+                    result = "She dives into the cheddar waters. Floating brie chunks surround her as Diego waves from a fondue pot!";
+                    break;
+                case 'forest':
+                    result = "Running past crusty trees, she spots Jeff joyfully rolling in a gouda wheel, shouting 'I am the cheese king!'";
+                    break;
+            }
+            result += "<br><br>You collected " + cheeseCount + " cheeses on this leg of the adventure!";
+            document.getElementById("scene").innerHTML = result;
+            document.getElementById("choices").innerHTML = '<button onclick="location.reload()">Play Again</button>';
+        }
+    </script>
+</body>
+</html>
